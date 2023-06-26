@@ -21,8 +21,7 @@ function FileUpload(props) {
       method: "POST",
       body: formData,
       formData,
-    })
-      .then((response) => response.json())
+    }).then((response) => response.json())
       .then((data) => {
         setRes(data.res);
         setHeight(data.height);

@@ -7,7 +7,6 @@ COPY ./public ./public
 RUN npm install
 RUN npm run build
 
-# Build step #2: build an Caddy container
 FROM caddy:alpine
 EXPOSE 80
 EXPOSE 443
