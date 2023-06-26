@@ -16,10 +16,12 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-api_key = os.getenv('API_KEY3')
-api_secret = os.getenv('API_SECRET3')
-image_path = os.getenv('IMAGE_PATH')
-api_url = os.getenv('API_URL')
+api_key = 'acc_dd700ee8152491f'
+api_secret = '0a494150eda85de6bacd6cc0df281f82'
+script_dir = os.path.dirname(__file__)
+rel_path = "out.jpg"
+image_path = os.path.join(script_dir, rel_path)
+api_url = 'https://api.imagga.com/v2/tags?language=ru'
 
 
 async def scaning_photo(): 
@@ -34,6 +36,7 @@ async def scaning_photo():
                       ['tags'][0]['confidence']).capitalize()
     print(probability, obj)
     os.remove(image_path)
+
     return f'С вероятностью {probability}% это {obj} '
 
 

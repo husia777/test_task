@@ -16,7 +16,7 @@ function FileUpload(props) {
     event.preventDefault();
     const formData = new FormData();
     formData.append("file", file);
-    const endpoint = "http://localhost:8000/files/";
+    const endpoint = "http://127.0.0.1:8000/files/";
     fetch(endpoint, {
       method: "POST",
       body: formData,
